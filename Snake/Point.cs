@@ -28,7 +28,7 @@ namespace Snake
             x = p.x;
             y = p.y;
             sym = p.sym;
-        }
+        }        
 
         public void Move(int offset, Direction direction)   //create snake of given lenght and direction
         {
@@ -55,6 +55,12 @@ namespace Snake
         {
             Console.SetCursorPosition(x, y);
             Console.Write(sym);
+        }
+
+        public void Clear()                             //to clear point on the screen during move
+        {
+            sym = ' ';
+            Draw();
         }
 
         public override string ToString()               //for debuggin
