@@ -12,6 +12,17 @@ namespace Snake
         public int y;
         public char sym;
 
+        public Point()                                      //default constructor
+        {            
+        }
+
+        public Point( int _x, int _y, char _sym)            // constructor with members
+        {
+            x = _x;
+            y = _y;
+            sym = _sym;
+        }
+
         public void Draw()
         {
             Console.SetCursorPosition(x, y);
