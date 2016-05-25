@@ -10,6 +10,7 @@ namespace Snake
     {
         static void Main(string[] args)
         {
+            //Console.SetBufferSize(90, 30);
 
             //draw square
             HorizontalLine upLine = new HorizontalLine(0, 78, 0, '+'); 
@@ -20,6 +21,8 @@ namespace Snake
             rightLine.Draw();
             VerticalLine leftLine = new VerticalLine(0, 24, 78, '+');
             leftLine.Draw();
+
+
 
             Console.ReadLine();
         }        
