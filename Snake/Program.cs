@@ -22,8 +22,6 @@ namespace Snake
             VerticalLine rightLine = new VerticalLine(0, 24, 78, '+');
             rightLine.Draw();
 
-
-
             Console.ReadLine();
         }        
     }
