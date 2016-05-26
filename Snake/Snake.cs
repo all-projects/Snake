@@ -8,7 +8,7 @@ namespace Snake
 {
     class Snake : Figure
     {
-        Direction direction;
+        Direction direction;                               // or public, or internal if accessed from Program.cs
 
         public Snake(Point tail, int length, Direction _direction)
         {
@@ -41,10 +41,17 @@ namespace Snake
             nextPoint.Move(1, direction);
             return nextPoint;
         }
-
-        internal void Clear()
+        
+        public void HandleKey(ConsoleKey key)
         {
-            throw new NotImplementedException();
-        }
+            if (key == ConsoleKey.LeftArrow)
+                direction = Direction.Left;
+            if (key == ConsoleKey.RightArrow)
+                direction = Direction.Right;
+            if (key == ConsoleKey.DownArrow)
+                direction = Direction.Down;
+            if (key == ConsoleKey.UpArrow)
+                direction = Direction.Up;
+        }        
     }
 }

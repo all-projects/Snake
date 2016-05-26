@@ -11,7 +11,7 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            Console.SetBufferSize(120, 120);
+            Console.SetBufferSize(120, 120);   //original 80 , 25
 
             //draw square
             HorizontalLine upLine = new HorizontalLine(0, 78, 0, '+'); 
@@ -27,26 +27,17 @@ namespace Snake
             Point p = new Point(4, 5, '*');
             Snake snake = new Snake(p, 4, Direction.Right);
             snake.Draw();
-            snake.MoveSnake();
-            Thread.Sleep(300);              //to delay drawing
-            snake.MoveSnake();
-            Thread.Sleep(300);
-            snake.MoveSnake();
-            Thread.Sleep(300);
-            snake.MoveSnake();
-            Thread.Sleep(300);
-            snake.MoveSnake();
-            Thread.Sleep(300);
-            snake.MoveSnake();
-            Thread.Sleep(300);
-            snake.MoveSnake();
-            Thread.Sleep(300);
-            snake.MoveSnake();
-            Thread.Sleep(300);
 
-
-
-            Console.ReadLine();
+            while(true)
+            {
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    snake.HandleKey(key.Key);
+                }
+                Thread.Sleep(100);
+                snake.MoveSnake();
+            }                   
         }        
     }
 }
